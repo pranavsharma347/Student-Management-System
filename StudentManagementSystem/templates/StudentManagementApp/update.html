@@ -1,0 +1,40 @@
+{%extends 'StudentManagementApp/basehome.html'%}
+{%block title%}Update{%endblock%}
+{%block showactive%}active{%endblock%}
+{%block parent%}
+<center>
+<div class="container my-3" id="login" >
+ <form method="post" >
+            {% csrf_token %}
+            <div class="form-group">
+  <div class="form-group">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" name='ufname' id="fname" value="{{data.FirstName}}"  required >
+  </div>
+            <div class="form-group">
+    <label for="lname">Last Name</label>
+    <input type="text" class="form-control" name='ulname' id="lname" value="{{data.LastName}}" required>
+  </div>
+      <div class="form-group">
+    <label for="course">Course</label>
+    <input type="text" class="form-control" name='ucourse' id="course" value="{{data.Course}}" required>
+  </div>
+ <div class="form-group">
+      <div class="form-group">
+    <label for="mobileno">Mobile No</label>
+    <input type="text" class="form-control" name='umobileno' id="mobileno" value="{{data.Mobileno}}" required maxlength="10" minlength="10">
+  </div>
+ <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" class="form-control" name='uemail' id="email" value="{{data.Email}}" required>
+  </div>
+     <div class="form-group">
+    <label for="address">Address</label>
+    <input type="text" class="form-control" name='uaddress' id="address" value="{{data.Address}}" required>
+  </div>
+
+             <button type="submit" class="btn btn-primary">Update</button><br>
+
+ </form>
+</div>
+{%endblock%}

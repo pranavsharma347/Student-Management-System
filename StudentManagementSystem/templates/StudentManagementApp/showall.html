@@ -1,0 +1,33 @@
+{%extends 'StudentManagementApp/basehome.html'%}
+{%block title%}Showall{%endblock%}
+{%block showactive%}active{%endblock%}
+{%block parent%}
+<center>
+<table border="2px" class="my-3" width="100%">
+
+<thread>
+    <th>First Name</th>
+     <th>Last Name</th>
+     <th>Course</th>
+     <th>Mobileno</th>
+     <th>Email</th>
+    <th>Address</th>
+    <th>Operation</th>
+
+</thread>
+    {%for x in data%}
+    <tr>
+    <td>{{x.FirstName}}</td>
+    <td>{{x.LastName}}</td>
+    <td>{{x.Course}}</td>
+    <td>{{x.Mobileno}}</td>
+    <td>{{x.Email}}</td>
+    <td>{{x.Address}}</td>
+    <td><a href="/update/{{x.Rollno}}" class="btn btn-success">Update</a> <a href="/delete/{{x.Rollno}}" class="btn btn-danger ml-3">Delete</a></td>
+
+    </tr>
+    {%endfor%}
+</table>
+</center>
+
+{%endblock%}
